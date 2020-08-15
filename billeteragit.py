@@ -10,7 +10,7 @@ from datetime import datetime
 monedasCMC = dict()
 monedasBilletera = dict()
 transacciones = list()
-direccionBilletera = "HELL"
+direccionBilletera = "HELLO"
 
 # Imprime la lista de Comandos
 def imprimirAyuda():
