@@ -213,13 +213,13 @@ imprimirAyuda() # Imprime la lista de comandos por primera vez
 # Ciclo principal
 while True:
     command = input("Ingrese comando: ").rstrip()
-    if command == "Salir" or command == "salir":
+    if command.lower() == "salir":
         salir()
     
-    elif command == "Ayuda" or command == "ayuda":
+    elif command.lower() == "ayuda":
         imprimirAyuda()
     
-    elif command == "Recibir" or command == "recibir":
+    elif command.lower() == "recibir":
         print()
         
         direccion = input("Ingrese direccion de la billetera: ").rstrip()
@@ -247,7 +247,7 @@ while True:
     
         recibir(direccion, nombre.upper(), cantidad)
         
-    elif command == "Tranferir" or command == "transferir":
+    elif command.lower() == "transferir":
         print()
         direccion = input("Ingrese direccion de la billetera: ").rstrip()
         # Chequea que la direccion indicada no sea la direccion de la misma billetera
@@ -273,7 +273,7 @@ while True:
         
         transferir(direccion, nombre.upper() , cantidad)
     
-    elif command == "Balance" or command == "balance":
+    elif command.lower() == "balance":
         
         print()
         nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
@@ -283,10 +283,10 @@ while True:
             nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
         balance(nombre.upper())
     
-    elif command == "General" or command == "general":
+    elif command.lower() == "general":
         general()
     
-    elif command == "Historico" or command == "historico":
+    elif command.lower() == "historico":
         historico()
     
     else:
