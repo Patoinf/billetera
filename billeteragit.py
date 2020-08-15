@@ -189,8 +189,8 @@ except:
     print("\n\t\t¡Bienvenido a tu e-wallet!\n")
     m = True
     while m:
-        a = input("Desea crear una nueva Billetera? S/N: ")
-        if a == "s" or a == "S" or a == "si" or a == "Si":
+        a = input("Desea crear una nueva Billetera? S/N: ").rstrip()
+        if a.lower() == "s" or a.lower() == "si":
             f = open("billetera.txt","w+")
             f2 = open("transacciones.txt","w+")
             letters = string.ascii_letters + string.digits
@@ -201,7 +201,7 @@ except:
             f2.close()
             m = False
 
-        elif a == "N" or a == "n" or a == "no" or a == "No":
+        elif a.lower() == "n" or a.lower() == "no":
             print("\n\tAdios\n")
             sys.exit()
         
