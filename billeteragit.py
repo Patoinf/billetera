@@ -238,7 +238,7 @@ while True:
         cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
         # Chequea que 'cantidad' no sea un numero o que se usa '.' para indicar la parte decimal
         while "," in cantidad or not isfloat(cantidad) or float(cantidad) <0:
-            print("\n**** Use '.' para dar valores decimales ****")
+            print("\n**** Use  '.' para dar valores decimales ****")
             print("**** Ingresar solamente numeros, no texto ****")
             print("**** Ingresar solamente numeros positivos ****\n")
             cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
