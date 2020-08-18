@@ -37,7 +37,7 @@ def CMC():
     for cripto in data["data"]:
         monedasCMC[cripto["symbol"]] = float(cripto["quote"]["USD"]["price"])
 
-# Genera un diccionario Llave = codigoMoneda, Valor = tuple(cantidad, cotizacion) a partir de billetera.txt
+# Genera un diccionario Llave = codigoMoneda, Valor = cotizacion en USD a partir de billetera.txt
 # Genera una lista de transacciones a partir de transacciones.txt
 def leer():
     global direccionBilletera
