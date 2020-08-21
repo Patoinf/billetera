@@ -150,7 +150,7 @@ def general():
     for key, value in monedasBilletera.items():
         montoUSD = monedasCMC[key]*monedasBilletera[key]
         montoRedondeado = "{:.2f}".format(montoUSD)
-        print(key+": " + str(monedasBilletera[key]) + "  =  USD$ " + montoRedondeado)
+        print(key+":\t " + str(monedasBilletera[key]) + "  =  USD$ " + montoRedondeado)
         totalUSD += montoUSD
     print()
     totalRedondeado = "{:.2f}".format(totalUSD)
@@ -171,7 +171,7 @@ def esmoneda(cripto):
 def listaMonedas():
     for key, value in monedasCMC.items():
         
-        print(key + "   Precio: USD $"+"{:.2f}".format(value))
+        print(key + "\tPrecio USD: $"+"{:.2f}".format(value))
     print()
 
 # Chequea que value sea convertible a float
