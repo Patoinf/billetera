@@ -14,16 +14,16 @@ direccionBilletera = "HELLO"
 
 # Imprime la lista de Comandos
 def imprimirAyuda():
-    print("""
-Comandos:
+    print("""Comandos:
+
+Ayuda:          Imprime esta lista de comandos.
+Balance:        Balance de una moneda.
+General:        Balance General.
+Recibir:        Recibir una tranferencia desde otra cuenta.
+Transferir:     Transferir a otra cuenta.
+Monedas:        Lista de Monedas de CoinMarketCap.com
 
 Salir:      Salir de su e-wallet
-Recibir:    Recibir una tranferencia desde otra cuenta.
-Transferir: Transferir a otra cuenta.
-Balance:    Balance de una moneda.
-General:    Balance General.
-Historico:  Movimientos e-wallet.
-Ayuda:      Imprime esta lista de comandos.
 """)
 
 
@@ -168,6 +168,12 @@ def historico():
 def esmoneda(cripto):
     return cripto.upper() in monedasCMC
 
+def listaMonedas():
+    for key, value in monedasCMC.items():
+        
+        print(key + "   Precio: USD $"+"{:.2f}".format(value))
+    print()
+
 # Chequea que value sea convertible a float
 def isfloat(value):
     try:
@@ -288,6 +294,10 @@ while True:
     
     elif command.lower() == "historico":
         historico()
+
+    elif command.lower() == "monedas":
+        print()
+        listaMonedas()
     
     else:
         print("\n**** Comando Invalido ****\n")
