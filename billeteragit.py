@@ -86,7 +86,7 @@ def recibir(cuenta, moneda, cantidad):
     # Se actualizan el archivo transacciones.txt y la lista transacciones
     now = datetime.now()
     fechaHora = now.strftime("%d/%m/%Y %H:%M:%S")
-    linea = "IN "+fechaHora+" "+cuenta+" "+moneda+" "+str(cantidad)
+    linea = "IN\t"+fechaHora+" "+cuenta+"\t\t "+moneda+" "+str(cantidad)
     f = open("transacciones.txt", "a")
     f.write("\n"+linea)
     f.close()
@@ -119,7 +119,7 @@ def transferir(cuenta, moneda, cantidad):
     # Se actualizan el archivo transacciones.txt y la lista transacciones
     now = datetime.now()
     fechaHora = now.strftime("%d/%m/%Y %H:%M:%S")
-    linea = "OUT "+fechaHora+" "+cuenta+" "+moneda+" "+str(cantidad)
+    linea = "OUT\t"+fechaHora+" "+cuenta+"\t\t "+moneda+" "+str(cantidad)
     f = open("transacciones.txt", "a")
     f.write("\n"+linea)
     f.close()
