@@ -14,11 +14,13 @@ direccionBilletera = "HELLO"
 
 # Imprime la lista de Comandos
 def imprimirAyuda():
+
     print("""Comandos:
 
 Ayuda:          Imprime esta lista de comandos.
 Balance:        Balance de una moneda.
 General:        Balance General.
+Historico:      Imprime lista de transacciones.
 Recibir:        Recibir una tranferencia desde otra cuenta.
 Transferir:     Transferir a otra cuenta.
 Monedas:        Lista de Monedas de CoinMarketCap.com
@@ -48,7 +50,7 @@ def leer():
         if not a:
             break
         if l[0] == "Direccion":
-            direccionBilletera = l[1]
+            direccionBilletera = l[1].rstrip()
             print("\n    "+direccionBilletera)
         else:
             monedasBilletera[l[0]] = float(l[1])
@@ -214,6 +216,7 @@ except:
 # Inicializar el programa
 CMC() # Llenar diccionario 'monedasCMC' con nombres de monedas y precios desde CoinMarketCap
 leer() # Leer los archivos billetera.txt y transacciones.txt y llena el diccionario 'monedasBilletera' y la lista 'transacciones'
+print()
 imprimirAyuda() # Imprime la lista de comandos por primera vez
 
 # Ciclo principal
@@ -223,6 +226,7 @@ while True:
         salir()
     
     elif command.lower() == "ayuda":
+        print()
         imprimirAyuda()
     
     elif command.lower() == "recibir":
