@@ -221,7 +221,7 @@ imprimirAyuda() # Imprime la lista de comandos por primera vez
 
 # Ciclo principal
 while True:
-    command = input("Ingrese comando: ").rstrip()
+    command = input("Ingrese comando: ").strip()
     if command.lower() == "salir":
         salir()
     
@@ -232,26 +232,26 @@ while True:
     elif command.lower() == "recibir":
         print()
         
-        direccion = input("Ingrese direccion de la billetera: ").rstrip()
+        direccion = input("Ingrese direccion de la billetera: ").strip()
         # Chequea que la direccion indicada no sea la direccion de la misma billetera
 
-        while direccion == direccionBilletera.rstrip() or direccion == "":
+        while direccion == direccionBilletera.strip() or direccion == "":
             print("\n**** Direccion invalida o vacia: ingrese una direccion distinta a la suya ****\n")
-            direccion = input("Ingrese direccion de la billetera: ").rstrip()
+            direccion = input("Ingrese direccion de la billetera: ").strip()
 
-        nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+        nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         # Chequea que la moneda indicada exista en CoinMarketCap
         while not esmoneda(nombre):
             print("\n**** Moneda Invalida ****\n")
-            nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+            nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         
-        cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
+        cantidad = input("Ingrese el monto de la transferencia: ").strip()
         # Chequea que 'cantidad' no sea un numero o que se usa '.' para indicar la parte decimal
         while "," in cantidad or not isfloat(cantidad) or float(cantidad) <0:
             print("\n**** Use  '.' para dar valores decimales ****")
             print("**** Ingresar solamente numeros, no texto ****")
             print("**** Ingresar solamente numeros positivos ****\n")
-            cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
+            cantidad = input("Ingrese el monto de la transferencia: ").strip()
         cantidad = float(cantidad)
         print()
     
@@ -259,25 +259,25 @@ while True:
         
     elif command.lower() == "transferir":
         print()
-        direccion = input("Ingrese direccion de la billetera: ").rstrip()
+        direccion = input("Ingrese direccion de la billetera: ").strip()
         # Chequea que la direccion indicada no sea la direccion de la misma billetera
         while direccion == direccionBilletera.rstrip() or direccion == "":
             print("\n**** Direccion invalida o vacia: ingrese una direccion distinta a la suya ****\n")
-            direccion = input("Ingrese direccion de la billetera: ").rstrip()
+            direccion = input("Ingrese direccion de la billetera: ").strip()
 
-        nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+        nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         # Chequea que la moneda indicada exista en CoinMarketCap
         while not esmoneda(nombre):
             print("\n**** Moneda Invalida ****\n")
-            nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+            nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         
-        cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
+        cantidad = input("Ingrese el monto de la transferencia: ").strip()
          # Chequea que 'cantidad' no sea un numero o que se usa '.' para indicar la parte decimal
         while "," in cantidad or not isfloat(cantidad) or float(cantidad) <0:
             print("\n**** Use '.' para dar valores decimales ****")
             print("**** Ingresar solamente numeros, no texto ****")
             print("**** Ingresar solamente numeros positivos ****\n")
-            cantidad = input("Ingrese el monto de la transferencia: ").rstrip()
+            cantidad = input("Ingrese el monto de la transferencia: ").strip()
         cantidad = float(cantidad)
         print()
         
@@ -286,11 +286,11 @@ while True:
     elif command.lower() == "balance":
         
         print()
-        nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+        nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         # Chequea que la moneda indicada exista en CoinMarketCap
         while not esmoneda(nombre):
             print("\n**** Moneda Invalida ****\n")
-            nombre = input("Ingrese nombre de 3 letras de la moneda: ").rstrip()
+            nombre = input("Ingrese nombre de 3 letras de la moneda: ").strip()
         balance(nombre.upper())
     
     elif command.lower() == "general":
