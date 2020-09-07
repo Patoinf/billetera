@@ -197,7 +197,7 @@ except:
     print("\n\t\t¡Bienvenido a tu e-wallet!\n")
     m = True
     while m:
-        a = input("Desea crear una nueva Billetera? S/N: ").rstrip()
+        a = input("Desea crear una nueva Billetera? S/N: ").strip()
         if a.lower() == "s" or a.lower() == "si":
             f = open("billetera.txt","w+")
             f2 = open("transacciones.txt","w+")
